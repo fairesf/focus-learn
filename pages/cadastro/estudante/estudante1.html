@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Learn</title>
+  <link rel="icon" type="image/png" href="../../../img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estudante1.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <header class="header">
+        <h1 class="title">Quase lá!</h1>
+        <span class="step">3 de 3 passos</span>
+      </header>
+
+      <div class="progress">
+        <div class="progress__bar"></div>
+      </div>
+
+      <form class="form">
+        <label class="field">
+          <span>Instituição de Ensino</span>
+          <input type="text" name="escola" placeholder="Digite o nome da sua escola" />
+        </label>
+
+        <label class="field">
+          <span>Para qual turma devemos te direcionar?</span>
+          <input type="email" name="email" placeholder="Informe seu ano ou período semestral" />
+        </label>
+
+        <div class="form-actions">
+          <a href="../cadastro3.html" class="link-back">Voltar</a>
+          <button type="submit" class="btn-primary">Continuar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+  document.querySelector('.form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'estudante2.html';
+  });
+</script>
+
+</body>
+</html>

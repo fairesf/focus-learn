@@ -1,0 +1,239 @@
+:root{
+  --bg:#E2DFFE;
+  --step:#7B64D9;
+  --track:#3D4759;
+  --track-faint:rgba(226,223,254,.15);
+  --text:#3D4759;
+  --muted:#6D66A0;
+  --white:#FDFCFE;
+  --btn:#483B6D;
+  --radius:4px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+
+.frame{
+  width:1440px;
+  height:1024px;
+  margin:0 auto;
+  padding:229px 202px 230px 201px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.card{
+  width:1037px;
+  height:565px;
+  background:var(--white);
+  border-radius:25px;
+  box-shadow:0 16px 40px rgba(30,22,84,.06);
+  padding:44px 73px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:50px;
+}
+
+.header,.progress{width:100%}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.title{
+  color: var(--text);
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px; 
+}
+.step{
+  color: var(--step);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.progress{
+  width:100%;
+  height:10px;
+  border-radius:999px;
+  background:var(--track);
+  position:relative;
+  overflow:hidden;
+
+}
+.progress::before{content:"";position:absolute;inset:0;background:var(--track-faint)}
+
+.progress__bar {
+  height: 100%;
+  background: var(--step);
+  transition: width 1s ease-in-out;
+}
+
+.form{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.field{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.field span{
+  color: rgba(61, 71, 89, 0.85);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+input,
+select{
+  width:100%;
+  height:65px;
+  border:2.5px solid var(--muted);
+  border-radius:var(--radius);
+  background:rgba(226,223,254,.15);
+  color:var(--text);
+  font-size:16px;
+  padding:0 16px;
+  outline:none;
+}
+
+input::placeholder{
+  color: rgba(61, 71, 89, 0.45);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px; 
+}
+
+select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image:url("../img/down.png");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  background-size:16px 16px;
+  padding-right:48px;
+  color: rgba(61, 71, 89, 0.45);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+select option{
+  color: var(--muted);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+}
+
+input:focus,select:focus{border-color:var(--step);box-shadow:none}
+
+.actions{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:27px;
+}
+
+.link-back{
+  font-size:16px;
+  font-weight:700;
+  color:var(--step);
+  text-decoration:none;
+}
+.link-back:hover{text-decoration:underline}
+
+.btn-primary{
+  height: 51px;
+  width: 239px;
+  padding: 12px 24px;
+  border:0;
+  border-radius:var(--radius);
+  background:var(--btn);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: #c0b7e7;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.tag-remove {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tags-container-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.tags-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    min-height: 65px;
+    border: 2.5px solid var(--muted);
+    border-radius: var(--radius);
+    background: rgba(226, 223, 254, .15);
+    padding: 0 16px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#materia-select {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    border: 2.5px solid var(--muted);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background: var(--white);
+    max-height: 5;
+    opacity: 0;
+    overflow-y: auto;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#materia-select.visible {
+    max-height: 200px;
+    opacity: 1;
+}

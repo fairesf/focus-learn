@@ -1,0 +1,123 @@
+:root{
+  --bg:#E2DFFE;
+  --text:#3D4759;
+  --muted:#6D66A0;
+  --white:#FDFCFE;
+  --track:#3D4759;
+  --track-faint:rgba(226,223,254,.15);
+  --accent:#7B64D9;
+  --step:#7B64D9;
+  --mint:#BFEAD9;
+  --mint-stroke:#2DAA8C;
+  --peach:#FFD8C6;
+  --peach-stroke:#E0663F;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.frame{
+  width:1440px;
+  height:1024px;
+  padding:268px 211px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.card{
+  width:1018px;
+  height:488px;
+  background:var(--white);
+  border-radius:25px;
+  box-shadow:0 16px 40px rgba(30,22,84,.06);
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+}
+
+.header{
+  width:100%;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+.title{
+  font-size: 30px;
+  font-weight:700;
+  color: var(--text);
+  line-height: 19px; 
+}
+.step{
+  color: var(--step);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.progress{
+  width:100%;
+  height:10px;
+  border-radius:999px;
+  background:var(--track);
+  position:relative;
+  overflow:hidden;
+  margin-top:32px;
+}
+
+
+.progress__bar{
+  height: 100%;
+  background-color:#7B64D9;
+  width: 0%;
+  transition: width 1.5s ease-out;
+}
+
+.options{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:130px;
+  margin-top:91.5px;
+}
+
+.option-group{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--text);
+}
+
+.option{
+  width:150px;
+  height:150px;
+  border-radius:12px;
+  border:2px solid transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.option img{width:64px;height:64px;display:block}
+
+.option--green{background:var(--mint);border-color:var(--mint-stroke)}
+.option--orange{background:var(--peach);border-color:var(--peach-stroke)}
+.option:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}

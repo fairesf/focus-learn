@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Learn</title>
+  <link rel="icon" type="image/png" href="../../img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="cadastro3.css" />
+</head>
+<body>
+  <main class="frame">
+    <section class="card">
+      <header class="header">
+        <h1 class="title">Você é...</h1>
+        <span class="step">2 de 3 passos</span>
+      </header>
+
+      <div class="progress">
+        <div class="progress__bar"></div>
+      </div>
+
+      <div class="options">
+        <div class="option-group">
+          <button id="opt-student" class="option option--green" type="button">
+            <img src="../../img/estudante.png" alt="Estudante" />
+          </button>
+          <span>Estudante</span>
+        </div>
+
+        <div class="option-group">
+          <button id="opt-teacher" class="option option--orange" type="button">
+            <img src="../../img/professor.png" alt="Professor(a)" />
+          </button>
+          <span>Professor(a)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('opt-student').onclick = () => location.href = 'estudante/estudante1.html';
+    document.getElementById('opt-teacher').onclick = () => location.href = 'professor/professor1.html';
+  </script>
+  <script src="../../scripts/index.js"></script>
+
+</body>
+</html>

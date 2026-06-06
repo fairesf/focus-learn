@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Learn</title>
+  <link rel="icon" type="image/png" href="../../../img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="professor2.css" />
+</head>
+<body>
+  <main class="frame">
+    <section class="card">
+      <header class="header">
+        <h1 class="title">Complete sua conta de Professor</h1>
+        <span class="step">3 de 3 passos</span>
+      </header>
+
+      <div class="progress">
+        <div class="progress__bar" style="width:66%"></div>
+      </div>
+
+      <form class="form">
+        <label class="field">
+          <span>Por qual nomes os alunos te chamam?</span>
+          <input type="text" name="escola" placeholder="Digite o seu apelido">
+        </label>
+
+        <label class="field">
+            <span>Materias Ensinadas</span>
+            <div class="tags-container-wrapper">
+              <div class="tags-input-container">
+                </div>
+              <select id="materia-select" multiple>
+                <option value="matematica">Matemática</option>
+                <option value="educacao-financeira">Educação Financeira</option>
+                <option value="biologia">Biologia</option>
+                <option value="historia">História</option>
+                <option value="geografia">Geografia</option>
+                <option value="fisica">Física</option>
+                <option value="quimica">Química</option>
+                <option value="portugues">Português</option>
+                <option value="programação">Programação</option>
+                <option value="outros">Outros</option>
+                
+              </select>
+            </div>
+          </label>
+
+        <div class="actions">
+          <a href="professor1.html" class="link-back">Voltar</a>
+          <button type="submit" class="btn-primary">Complete o cadastro</button>
+        </div>
+
+        <script>
+            const materiaSelect = document.getElementById('materia-select');
+            const tagsContainer = document.querySelector('.tags-input-container');
+          
+            tagsContainer.addEventListener('click', () => {
+              materiaSelect.classList.toggle('visible');
+            });
+          
+            materiaSelect.addEventListener('change', (event) => {
+              const selectedOption = event.target.options[event.target.selectedIndex];
+              if (selectedOption.value) {
+                const newTag = document.createElement('div');
+                newTag.className = 'tag';
+                newTag.innerHTML = `
+                  <span>${selectedOption.text}</span>
+                  <span class="tag-remove">&times;</span>
+                `;
+                tagsContainer.insertBefore(newTag, tagsContainer.lastChild);
+                selectedOption.disabled = true;
+          
+                newTag.querySelector('.tag-remove').addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  newTag.remove();
+                  selectedOption.disabled = false;
+                });
+              }
+            });
+        
+            document.addEventListener('click', (e) => {
+              if (!tagsContainer.contains(e.target) && !materiaSelect.contains(e.target)) {
+                materiaSelect.classList.remove('visible');
+              }
+            });
+            
+          </script>
+          <script src="../../../scripts/index1.js"></script>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

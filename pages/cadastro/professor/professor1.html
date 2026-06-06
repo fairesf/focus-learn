@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Learn</title>
+  <link rel="icon" type="image/png" href="../../../img/icon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="professor1.css" />
+</head>
+<body>
+  <main class="frame">
+    <section class="card">
+      <header class="header">
+        <h1 class="title">Quase lá!</h1>
+        <span class="step">2 de 3 passos</span>
+      </header>
+
+      <div class="progress">
+        <div class="progress__bar" style="width:66%"></div>
+      </div>
+
+      <form class="form">
+        <label class="field">
+          <span>Escola</span>
+          <input type="text" name="escola" placeholder="Digite o nome da sua escola">
+        </label>
+
+        <label class="field">
+          <span>Cargo</span>
+          <select name="cargo">
+            <option value="" selected disabled>Selecione seu cargo</option>
+            <option>Professor(a)</option>
+            <option>Coordenador(a)</option>
+            <option>Diretor(a)</option>
+            <option>Pedagogo(a)</option>
+            <option>Outro</option>
+          </select>
+        </label>
+
+        <div class="actions">
+          <a href="../cadastro3.html" class="link-back">Voltar</a>
+          <button type="submit" class="btn-primary">Complete o cadastro</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script>
+  document.querySelector('.form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'professor2.html';
+  });
+</script>
+</body>
+</html>

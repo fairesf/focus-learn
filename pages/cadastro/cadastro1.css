@@ -1,0 +1,152 @@
+:root{
+  --bg:#E2DFFE;
+  --text:#3D4759;
+  --muted:#6D66A0;
+  --white:#FDFCFE;
+  --light:#E2DFFE;
+  --primary:#483B6D;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.frame{
+  width:1440px;
+  height:1024px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  width:553px;
+  height: 609px;
+  background:var(--white);
+  border-radius:10px;
+  box-shadow:0 16px 40px rgba(30,22,84,.06);
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+
+.title{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  color: #7B64D9;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px; 
+  margin-bottom:40px;
+}
+
+.hero{
+  width:266px;
+  height:159px;
+  margin-bottom:40px;
+}
+
+.btn {
+  width: 499px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 26.5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+  border-radius: 2px;
+}
+
+.btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.btn.light {
+  background: var(--light);
+  color: var(--text);
+  margin-bottom: 17.5px;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  width: 498px;
+  height: 45px;
+  margin-top: 17.5px;
+  line-height: 45px;
+}
+
+.btn:hover {
+  filter: brightness(0.96);
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.separator span {
+  font-size: 12px;
+  color: var(--muted);
+  position: relative;
+  padding: 0 12px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #D9D9E6;
+}
+
+.foot{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+}
+
+.foot-top{font-size:14px;color:var(--muted)}
+
+.foot-link{
+  color:#2EC08B;
+  font-size:14px;
+  font-weight:700;
+  line-height:19.2px;
+  text-decoration:none;
+}
+
+.foot-link:hover{text-decoration:underline}

@@ -1,0 +1,10 @@
+# Pastas de ferramentas locais
+.claude/
+
+# Arquivos compactados (redundantes — conteúdo já versionado)
+*.zip
+
+# Sistema / editores
+Thumbs.db
+.DS_Store
+.vscode/
